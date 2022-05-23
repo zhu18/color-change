@@ -1,0 +1,49 @@
+{
+  "name": "color-change",
+  "version": "1.0.0",
+  "description": "Change the color of any element in the page, including image, video, canvas, etc",
+  "main": "build/index.module.js",
+  "scripts": {
+    "build": "rollup -c ./build/rollup.config.js",
+    "start": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhu18/color-change.git"
+  },
+  "keywords": [
+    "anov",
+    "anovcore"
+  ],
+  "devDependencies": {
+    "rollup": "^1.27.5",
+    "rollup-plugin-buble": "^0.19.8",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-transform-parameters": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "babel-eslint": "^8.2.6",
+    "chai": "^4.2.0",
+    "eslint": "^4.19.1",
+    "husky": "^1.3.1",
+    "mocha": "^5.2.0",
+    "rollup-plugin-babel": "^4.2.0",
+    "rollup-plugin-cleanup": "^3.1.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-eslint": "^5.0.0",
+    "rollup-plugin-filesize": "^6.0.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-progress": "^1.1.2",
+    "rollup-plugin-terser": "^4.0.2"
+  },
+  "author": "zhu18@vip.qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhu18/color-change/issues"
+  },
+  "homepage": "https://github.com/zhu18/color-change#readme",
+  "dependencies": {
+
+  }
+}
