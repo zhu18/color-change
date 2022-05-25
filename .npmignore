@@ -1,0 +1,12 @@
+.DS_Store
+*.swp
+.project
+node_modules
+.node_modules.nosync
+.idea/
+.vscode/
+npm-debug.log
+.jshintrc
+.vs/
+test/
+docs/
