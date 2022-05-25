@@ -10,27 +10,6 @@ const cleanup = require('rollup-plugin-cleanup');
 const terser = require("rollup-plugin-terser");
 
 export default [
-	// {
-	// 	input: 'src/index.js',
-	// 	plugins: [
-	// 		// glconstants(),
-	// 		// glsl(),
-	// 		buble( {
-	// 			transforms: {
-	// 				arrow: false,
-	// 				classes: true
-	// 			}
-	// 		} )
-	// 	],
-	// 	output: [
-	// 		{
-	// 			format: 'umd',
-	// 			name: 'THREE',
-	// 			file: 'build/index.js',
-	// 			indent: '\t'
-	// 		}
-	// 	]
-	// },
 	{
 		input: 'src/index.js',
 		plugins: [
@@ -49,7 +28,7 @@ export default [
 			  clearLine: false
 			})
 		],
-		external: ['axios','lodash.merge','dtc','gsap','hotkeys-js','howler','crypto-js','upng-js', 'xlsx', 'lodash-es'],
+	//	external: ['axios','lodash.merge','dtc','gsap','hotkeys-js','howler','crypto-js','upng-js', 'xlsx', 'lodash-es'],
 		output: [
 			{
 				format: 'esm',

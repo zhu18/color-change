@@ -1,4 +1,4 @@
-# Anov-core Visualization Platform Kernel
+# ColorChange
 
 
 [![npm Status](https://badgen.net/npm/v/anov-core/?icon=npm)](https://www.npmjs.com/package/anov-core)
@@ -8,84 +8,98 @@
 [![total downloads](https://badgen.net/npm/dt/anov-core)](https://www.npmjs.com/package/anov-core)
 
 
-ANOV Visualization Platform Kernel encapsulates all basic services, such as face recognition, gesture recognition, speech recognition, theme skin changing, internationalization, animation engine, basic components 
+A lightweight JavaScript to change the main color of images, background images, videos and canvases in the page
 
-## 1.Install
+[**View demo**](https://coloris.js.org/examples.html)
+
+## Features
+
+* Features
+* Zero dependencies
+* Very easy to use
+* Multiple color formats
+* Fully accessible
+* Works on all modern browsers (no IE support)
+
+## Install
 ```javascript
-npm install --save anov-core
+npm install --save color-change
 ```
 
-## 2. Usage
+## Getting Started
+### Basic usage
+```html
+<img class="cc" src="a.jpeg" />
+<div class="cc" style="background:url(b.jpeg)"></div>
+<video class="cc" src="c.mp4" ></video>
+<canvas class="cc"></canvas>
+```
 ```javascript
-import * as anov from 'anov-core'
+import {ColorChange} from 'color-change'
+// Select the element you want to change, like document.querySelectorAll
+let cc = new ColorChange('.cc')
 
-// 基础服务
-anov.baseServer
-// 运行时服务
-anov.runtimeServer
-// 环境服务
-anov.envServer
-// 数据源服务
-anov.dataSourceServer
-// 系统检测服务
-anov.systemCheckServer
-// 语音识别服务
-anov.voiceRecognizeServer
-// 语音反馈服务
-anov.voiceFeedbackServer
-// 人脸识别服务
-anov.faceRecognizeServer
-// 手势识别服务
-anov.gestureRecognizeServer
-// 光感识别服务
-anov.lightSensorServer
-// 页面服务
-anov.pageServer
-// 基础部件服务
-anov.partServer
-// 动作服务
-anov.actionServer
-// 快捷键服务
-anov.hotkeyServer
-// 国际化语音服务
-anov.languageServer
-// 动画服务
-anov.animateServer
-// 主题服务
-anov.themeServer
-// 音效服务
-anov.soundServer
-// 预加载服务
-anov.preloadServer
-// 大小适配服务
-anov.sizeAdaptServer
-// 场景特效服务
-anov.specialEffectServer
-// 存储芯片服务
-anov.chipServer
-// license服务
-anov.licenseServer
+// Change the color & hue of the element into 'red'
+cc.setColor('#ff0000')
 ```
  
-Specific cases
+### Specific cases
+img color pick:
 ```javascript
-...
-// 得到系统当前上下文
-anov.runtimeServer.getCurrentContext()
-// 开启光感识别
-anov.lightSensorServer.start()
-// 切换到下个系统内置主题
-anov.themeServer.next()
-...
+import {ColorPick} from 'color-change'
+// Get the main color of the img
+let cp = new ColorPick(document.querySelector('img'))
+let mainColor=cp.getColor()     // return [r,g,b]
+// Get 5 colors in the picture
+let colors=cp.getColors(5)      // return [[r,g,b],...]
 ```
 
-## 3.Packaging & Publishing
-
-```python
-npm run build
-npm publish
+ColorPick + ColorChange:
+```javascript
+import {ColorChange,ColorPick} from 'color-change'
+// Get the main color of the img
+let cp = new ColorPick(document.querySelector('img'))
+let mainColor=cp.getColor()     
+// Change video color to img main color
+let cc = new ColorChange('video')
+cc.setColor(mainColor)
+// cancel change
+//cc.clear()
 ```
+## Option
+### ColorChange
+```javascript
+/**
+ * ColorChange(el[,isSaturate][,isBrightness])
+ *  el: img,background,video,canvas             // Select the element you want to change
+ *  isSaturate: bool                            // Turn on color saturation recognition.
+ *  isBrightness: bool                          // Turn on color brightness recognition.
+ **/ 
+let cc =new ColorChange(el,isSaturate,isBrightness)
 
-### 4.Change log ###
+// function
+cc.setColor('#f00') // set color, rgb(255,0,0)| #ff0000 ..
+cc.clear()          // clear color
+```
+### ColorPick
+```javascript
+/**
+ * ColorPick(sourceImage)
+ *  sourceImage: img,video,canvas               // Want to get source Image of the color
+ **/ 
+let cp =new ColorPick(sourceImage)
 
-[Releases](https://github.com/zhu18/anov-core/releases)
+// function
+cp.getColor()                         // get mian color, return [r,g,b]
+cp.getColors(8)                             // Get colors, return [[r,g,b],...]
+```
+## Note
+cross domain URLs are not supported !!!
+
+Please enable [cross domain access](https://www.google.com/search?q=access+control+allow+origin) 
+of resources on the server or use the proxy 
+
+## License
+
+Copyright (c) 2022 zhu18@vip.qq.com  
+**color-change** is licensed under the [MIT license](https://github.com/zhu18/color-change/LICENSE).

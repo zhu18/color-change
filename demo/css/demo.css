@@ -1,0 +1,194 @@
+/* coloris */
+input {
+    width: 150px;
+    height: 32px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    box-sizing: border-box;
+}
+
+.examples {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.example {
+    flex-shrink: 0;
+    width: 300px;
+    margin-bottom: 30px;
+}
+
+.square .clr-field button,
+.circle .clr-field button {
+    width: 22px;
+    height: 22px;
+    left: 5px;
+    right: auto;
+    border-radius: 5px;
+}
+
+.square .clr-field input,
+.circle .clr-field input {
+    padding-left: 36px;
+}
+
+.circle .clr-field button {
+    border-radius: 50%;
+}
+
+.full .clr-field button {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+
+
+/* demo */
+.main {
+    display: flex;
+}
+
+.left {
+
+    width: 1000px;
+}
+
+.right {
+    flex: 1;
+    padding: 0 10px 10px 10px;
+    display: flex;
+}
+
+.panel {
+    border: 1px solid #234;
+    flex: 1;
+    position: relative;
+
+}
+
+.panel-top {
+    background: #e4e5e5;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.control-left{
+    flex: 1;
+    padding: 5px 10px 0px 10px;
+}
+.control-right{
+    flex: 1;
+    padding: 14px 0 5px 10px;
+}
+
+.title {
+    background: #e4e5e5;
+    color: #181717;
+    height: 40px;
+    font-size: 20px;
+    padding: 3px 10px;
+    border: 1px solid #234;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.block {
+    padding: 3px 10px;
+    background: #f0f0f0;
+    border: 1px solid #234;
+    margin-bottom: 10px;
+}
+
+.cc {
+    width: 250px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    min-height: 120px;
+}
+
+.co {
+    width: 30px;
+    height: 30px;
+    background: #ff9900;
+    display: inline-block;
+    border: 1px solid #888;
+    box-sizing: border-box;
+    border-right: none;
+}
+
+input[type=checkbox] {
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+}
+
+.btn {
+    cursor: pointer;
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 4px 10px;
+    width: 120px;
+    text-align: center;
+}
+
+.btn:hover {
+    opacity: .8;
+}
+
+.change {
+    color: #fff;
+    background: #0564fb;
+}
+
+.cancel {
+    color: #333;
+    background: #b4b4b6;
+}
+
+pre {
+    font-family: initial;
+    line-height: 30px;
+    color: #777;
+    padding: 20px;
+}
+
+h3 {
+    margin-left: 10px;
+}
+
+.link {
+    position: absolute;
+    bottom: 0;
+    background: #f0f0f0;
+    box-sizing: border-box;
+    height: 40px;
+    width: 100%;
+}
+
+a.icon {
+    float: right;
+    margin-right: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transform: scale(.8)
+}
+
+a.icon:hover {
+    opacity: .7;
+    transition: .2s all;
+}
+
+.warinfo {
+    background: #fff6e9;
+    color: #cd7519;
+    padding: 5px 10px;
+    margin: 10px;
+}

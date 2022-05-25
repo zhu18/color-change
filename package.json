@@ -1,7 +1,7 @@
 {
   "name": "color-change",
   "version": "1.0.0",
-  "description": "Change the color of any element in the page, including image, video, canvas, etc",
+  "description": "A lightweight JavaScript to change the main color of images, background images, videos and canvases in the page",
   "main": "build/index.module.js",
   "scripts": {
     "build": "rollup -c ./build/rollup.config.js",
@@ -12,8 +12,11 @@
     "url": "git+https://github.com/zhu18/color-change.git"
   },
   "keywords": [
-    "anov",
-    "anovcore"
+    "hue",
+    "video",
+    "canvas",
+    "colorchange",
+    "background"
   ],
   "devDependencies": {
     "rollup": "^1.27.5",
@@ -38,12 +41,11 @@
     "rollup-plugin-terser": "^4.0.2"
   },
   "author": "zhu18@vip.qq.com",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zhu18/color-change/issues"
   },
   "homepage": "https://github.com/zhu18/color-change#readme",
   "dependencies": {
-
   }
 }
