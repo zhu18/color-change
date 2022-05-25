@@ -10,7 +10,7 @@
 
 A lightweight JavaScript to change the main color of images, background images, videos and canvases in the page
 
-[**View demo**](https://coloris.js.org/examples.html)
+[**View demo**](https://zhu18.github.io/color-change/)
 
 ## Features
 
