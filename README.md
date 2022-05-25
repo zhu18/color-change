@@ -1,4 +1,4 @@
-# ColorChange
+# color-change
 
 
 [![npm Status](https://badgen.net/npm/v/color-change/?icon=npm)](https://www.npmjs.com/package/color-change)
