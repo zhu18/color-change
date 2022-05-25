@@ -102,4 +102,4 @@ of resources on the server or use the proxy
 ## License
 
 Copyright (c) 2022 zhu18@vip.qq.com  
-**color-change** is licensed under the [MIT license](https://github.com/zhu18/color-change/LICENSE).
+**color-change** is licensed under the [MIT license](https://github.com/zhu18/color-change/blob/master/LICENSE).
