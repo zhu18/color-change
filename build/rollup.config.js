@@ -35,6 +35,12 @@ export default [
 				file: 'build/index.module.js',
 				indent: '\t',
 				minify: true 
+			},
+			{
+				format: 'esm',
+				file: 'docs/js/color-change.esm.min.js',
+				indent: '\t',
+				minify: true 
 			}
 		]
 	}
