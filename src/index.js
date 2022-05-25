@@ -1,13 +1,12 @@
 /*
  * @name: color-change
- * @description: Change the color of any element in the page, including image, video, canvas, etc
+ * @description: Change the color element in the page, including image, video, canvas
  * @author: 朱润亚 zhu18@vip.qq.com (https://github.com/zhu18)
- * @license: ISC License
+ * @license: MIT License
  * */
 
 import Color from "./color"
 import ColorThief from "./ColorThief"
-import analyze from 'rgbaster'
 
 class ColorPick{
     constructor(img){

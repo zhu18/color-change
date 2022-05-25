@@ -1,11 +1,11 @@
 # ColorChange
 
 
-[![npm Status](https://badgen.net/npm/v/anov-core/?icon=npm)](https://www.npmjs.com/package/anov-core)
-[![npm Status](https://badgen.net/npm/license/anov-core)](https://www.npmjs.com/package/anov-core)
-[![install size](https://badgen.net/packagephobia/install/anov-core)](https://www.npmjs.com/package/anov-core)
-[![publish size](https://badgen.net/packagephobia/publish/anov-core)](https://www.npmjs.com/package/anov-core)
-[![total downloads](https://badgen.net/npm/dt/anov-core)](https://www.npmjs.com/package/anov-core)
+[![npm Status](https://badgen.net/npm/v/color-change/?icon=npm)](https://www.npmjs.com/package/color-change)
+[![npm Status](https://badgen.net/npm/license/color-change)](https://www.npmjs.com/package/color-change)
+[![install size](https://badgen.net/packagephobia/install/color-change)](https://www.npmjs.com/package/color-change)
+[![publish size](https://badgen.net/packagephobia/publish/color-change)](https://www.npmjs.com/package/color-change)
+[![total downloads](https://badgen.net/npm/dt/color-change)](https://www.npmjs.com/package/color-change)
 
 
 A lightweight JavaScript to change the main color of images, background images, videos and canvases in the page
@@ -36,7 +36,7 @@ npm install --save color-change
 ```
 ```javascript
 import {ColorChange} from 'color-change'
-// Select the element you want to change, like document.querySelectorAll
+// Select the element you want to change
 let cc = new ColorChange('.cc')
 
 // Change the color & hue of the element into 'red'
