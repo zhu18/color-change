@@ -70,12 +70,12 @@ cc.setColor(mainColor)
 ### ColorChange
 ```javascript
 /**
- * ColorChange(el[,isSaturate][,isBrightness])
+ * ColorChange(el[,isBrightness][,isSaturate])
  *  el: img,background,video,canvas             // Select the element you want to change
- *  isSaturate: bool                            // Turn on color saturation recognition.
  *  isBrightness: bool                          // Turn on color brightness recognition.
+ *  isSaturate: bool                            // Turn on color saturation recognition.
  **/ 
-let cc =new ColorChange(el,isSaturate,isBrightness)
+let cc =new ColorChange(el,isBrightness,isSaturate)
 
 // function
 cc.setColor('#f00') // set color, rgb(255,0,0)| #ff0000 ..

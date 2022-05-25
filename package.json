@@ -1,6 +1,6 @@
 {
   "name": "color-change",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A lightweight JavaScript to change the main color of images, background images, videos and canvases in the page",
   "main": "build/index.module.js",
   "scripts": {
