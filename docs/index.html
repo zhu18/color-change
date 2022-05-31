@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ColorChange demo</title>
+    <link href="css/highlight.min.css" rel="stylesheet" type="text/css" />
     <link href="css/coloris.min.css" rel="stylesheet" type="text/css" />
     <link href="css/demo.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+        <h3 class="mt">ColorChange Example</h3> | <a href="./colorpick.html"><h5 class="mt">ColorPick Example</h5></a>
     <div class="main">
     <div class="left">
         <div class='title'>img</div>
@@ -53,19 +55,33 @@
                 </div>
             </div>
             <div class="panel-bottom">
-               <h3>color-change Example</h3>
                 <pre>
--- html code --
+                        <code class="language-html">
     &lt;img class="cc" src="./img/1.jpeg" /&gt;
     &lt;div class="cc" style="background:url(./img/2.jpeg)" &gt;&lt;/div&gt;
     &lt;video class="cc" src="./img/video3.mp4" &gt;&lt;/video&gt;
+    &lt;canvas class="cc"  &gt;&lt;/canvas&gt;
 
--- js code -- 
+                            </code>
+                            </pre>
+<pre>
+    <code class="language-javascript">
     import {ColorChange} from 'color-change'
+
+    // Select img, background, video, canvas
     var cc = new ColorChange('.cc')
+
+    // Setting change color
     cc.setColor('#ff9900')
+
+    // Or callback after completion
+    cc.setColor('#369').then(()=>{
+        console.log('completion...')
+    })
+</code>
                 </pre>
-                <div class="warinfo">Note: cross domain URLs are not supported!!!</div>
+                <div class="warinfo">Note : URLs not support cross domain access !
+                </div>
                 <div class="link">
 
                     <a class="icon github" href="https://github.com/zhu18/color-change">
@@ -83,6 +99,9 @@
         </div>
     </div>
 </div>
+
+<script src="js/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 <script src="js/coloris.min.js"></script>
 <script type="text/javascript">
     Coloris({
@@ -105,7 +124,8 @@
 </script>
 
     <script type="module">
-        import {ColorChange} from './js/color-change.esm.min.js'
+        import {ColorChange,ColorPick} from './js/color-change.esm.min.js'
+
         let cc=null;
         let coloris=document.querySelector('.coloris');
         let btnChange=document.querySelector('.change');
@@ -113,7 +133,7 @@
         let ckbBrightness=document.querySelector('#ckbBrightness');
         let ckbSaturate=document.querySelector('#ckbSaturate');
 
-        btnChange.onclick=()=>{
+         btnChange.onclick=()=>{
             let color=coloris.value
             let isBrightness=ckbBrightness.checked
             let isSaturate=ckbSaturate.checked
@@ -122,14 +142,15 @@
 
             // color change 
             cc = new ColorChange('.cc',isBrightness,isSaturate)
+            
             cc.setColor(color)
-        }
+         }
 
         btnCancel.onclick=()=>{
             cc&&cc.clear()
         }
-
-
+        
+     
         
     </script>
     

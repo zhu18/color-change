@@ -10,7 +10,9 @@ input {
     font-weight: inherit;
     box-sizing: border-box;
 }
-
+h5.mt ,h3.mt {
+    display: inline;
+}
 .examples {
     display: flex;
     flex-wrap: wrap;
@@ -51,6 +53,7 @@ input {
 /* demo */
 .main {
     display: flex;
+    margin-top:15px; 
 }
 
 .left {
@@ -89,7 +92,7 @@ input {
 .title {
     background: #e4e5e5;
     color: #181717;
-    height: 40px;
+    height: 35px;
     font-size: 20px;
     padding: 3px 10px;
     border: 1px solid #234;
@@ -153,12 +156,6 @@ input[type=checkbox] {
     background: #b4b4b6;
 }
 
-pre {
-    font-family: initial;
-    line-height: 30px;
-    color: #777;
-    padding: 20px;
-}
 
 h3 {
     margin-left: 10px;
@@ -190,5 +187,17 @@ a.icon:hover {
     background: #fff6e9;
     color: #cd7519;
     padding: 5px 10px;
+    margin: 10px;
+}
+.color-panel{
+    position: relative;
+    float: right;
+    width: 400px;
+}
+.colorZone{
+    position: relative;
+    float: left;
+    width:30px;
+    height: 30px;
     margin: 10px;
 }

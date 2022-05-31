@@ -41,6 +41,11 @@ let cc = new ColorChange('.cc')
 
 // Change the color & hue of the element into 'red'
 cc.setColor('#ff0000')
+
+cc.setColor('#ff0000').then(()=>{
+    console.log('set color finish .')
+})
+
 ```
  
 ### Specific cases
@@ -49,22 +54,32 @@ img color pick:
 import {ColorPick} from 'color-change'
 // Get the main color of the img
 let cp = new ColorPick(document.querySelector('img'))
-let mainColor=cp.getColor()     // return [r,g,b]
-// Get 5 colors in the picture
-let colors=cp.getColors(5)      // return [[r,g,b],...]
+
+cp.getColor().then((color)=>{
+    let mainColor=color               // [r,g,b]
+})     
+cp.getColors(5).then((colors)=>{
+    let colorArray=colors             //  [[r,g,b],...]
+}) 
+// May also use async/await 
+let colors=await cp.getColors(5)      // return [[r,g,b],...]
 ```
 
 ColorPick + ColorChange:
 ```javascript
 import {ColorChange,ColorPick} from 'color-change'
-// Get the main color of the img
+
 let cp = new ColorPick(document.querySelector('img'))
-let mainColor=cp.getColor()     
-// Change video color to img main color
-let cc = new ColorChange('video')
-cc.setColor(mainColor)
-// cancel change
-//cc.clear()
+
+// Get the main color of the img
+cp.getColor().then((mainColor)=>{
+
+    // Change video color to img main color
+    let cc = new ColorChange('video')
+
+    cc.setColor(mainColor)
+})
+
 ```
 ## Option
 ### ColorChange
@@ -78,20 +93,20 @@ cc.setColor(mainColor)
 let cc =new ColorChange(el,isBrightness,isSaturate)
 
 // function
-cc.setColor('#f00') // set color, rgb(255,0,0)| #ff0000 ..
+cc.setColor('#f00') // set color, rgb(255,0,0)| #ff0000 .., return Promise
 cc.clear()          // clear color
 ```
 ### ColorPick
 ```javascript
 /**
  * ColorPick(sourceImage)
- *  sourceImage: img,video,canvas               // Want to get source Image of the color
+ *  sourceImage: img,background,video,canvas         // Want to get source Image of the color
  **/ 
 let cp =new ColorPick(sourceImage)
 
 // function
-cp.getColor()                         // get mian color, return [r,g,b]
-cp.getColors(8)                             // Get colors, return [[r,g,b],...]
+cp.getColor().then((color)=>{ ... })                 // Promise, get mian color, return [r,g,b]
+cp.getColors(5).then((colors)=>{ ... })              // Promise, Get colors, return [[r,g,b],...]
 ```
 ## Note
 cross domain URLs are not supported !!!
