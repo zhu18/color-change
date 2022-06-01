@@ -28,11 +28,12 @@ class ColorPick{
                 resolve(el) 
             }
             else{
-                if(el.style.background){
+                const background = el.style.background || el.style.backgroundImage
+                if(background){
                     let img=document.createElement('IMG')
                     //img.crossOrigin='anonymous';
                     //跨域问题 
-                    img.src=el.style.background.split("(")[1].split(")")[0].replaceAll('"','');
+                    img.src=background.split("(")[1].split(")")[0].replaceAll('"','');
                     img.onload=()=>{
                         resolve(img)
                     }
@@ -81,7 +82,7 @@ class ColorChange{
             })
         }
         else{
-            this._clearColor(el) 
+            this._clearColor(this.el) 
        }
     }
     _clearColor(el){
