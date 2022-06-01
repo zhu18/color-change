@@ -4,6 +4,8 @@
  * @author: 朱润亚 zhu18@vip.qq.com (https://github.com/zhu18)
  * @license: MIT License
  * */
+//git remote set-url origin 'https://gitee.com/zhu18/color-change.git'
+//git remote set-url origin 'git@github.com:zhu18/color-change.git'
 
 import Color from "./color"
 import ColorThief from "./ColorThief"
