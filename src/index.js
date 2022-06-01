@@ -82,7 +82,7 @@ class ColorChange{
             })
         }
         else{
-            this._clearColor(el) 
+            this._clearColor(this.el) 
        }
     }
     _clearColor(el){
