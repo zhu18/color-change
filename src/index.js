@@ -30,7 +30,7 @@ class ColorPick{
                 resolve(el) 
             }
             else{
-                const background = el.style.background || el.style.backgroundImage
+                const background = el.style.background || el.style.backgroundImage || el.style.borderImageSource
                 if(background){
                     let img=document.createElement('IMG')
                     //img.crossOrigin='anonymous';
