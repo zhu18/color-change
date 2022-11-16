@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ColorChange demo</title>
+    <link href="css/highlight.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/demo.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+        <h3 class="mt">ColorPick Example</h3> | <a href="./index.html"><h5 class="mt">ColorChange Example</h5></a>
+    <div class="main">
+    <div class="left">
+        <div class='title'>img</div>
+        <div class="block">
+            <img class="cc img1" src="./img/1.jpeg" /><div class="color-panel"></div>
+        </div>
+        <div class='title'>background</div>
+        <div class="block">
+            <div class="cc bg1" style="background:url(./img/3.jpeg);background-size: 100% 100%" ></div>
+            <div class="color-panel"></div>
+        </div>
+        <div class='title'>video</div>
+        <div class="block">
+            <video class="cc video1" src="./img/video4.mp4" autoplay loop muted></video>
+            <div class="color-panel"></div>
+        </div>
+       
+    </div>
+    <div class="right">
+        <div class="panel">
+            <div class="panel-top square">
+                    <div class="btn change exec">Try it</div>
+            </div>
+            <div class="panel-bottom">
+                <pre>
+                    <code class="language-html">
+    &lt;img class="cc img1" src="./img/1.jpeg" /&gt;
+                    </code>
+                </pre>
+                <pre>
+<code class="language-javascript">
+    import {ColorPick} from 'color-change'
+    var cp = new ColorPick('.img1')
+
+    // Note : return is Promise 
+    // demo 1
+    await cp.getColor()
+    
+    // demo 2
+    cp.getColors(3).then((colors)=>{    })
+</code>
+                </pre>
+                <div class="link">
+
+                    <a class="icon github" href="https://github.com/zhu18/color-change">
+                        <svg style="vertical-align: top;margin-top: 5px;" height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                    </a>  
+                    <a class="icon npm" href="https://www.npmjs.com/package/color-change">
+                        <svg style="height: 20px;
+                        vertical-align: top;
+                        margin-top: 13px;" viewBox="0 0 780 250"><path fill="#231F20" d="M240,250h100v-50h100V0H240V250z M340,50h50v100h-50V50z M480,0v200h100V50h50v150h50V50h50v150h50V0H480z M0,200h100V50h50v150h50V0H0V200z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+    <script type="module">
+        import {ColorPick} from './js/color-change.esm.min.js'
+
+        let btnExec=document.querySelector('.exec');
+
+        btnExec.onclick=async()=>{
+
+            let img=document.querySelector('.img1')
+            let bg=document.querySelector('.bg1')
+            let video=document.querySelector('.video1')
+
+            var cp_img = new ColorPick(img)
+            var cp_bg = new ColorPick(bg)
+            var cp_video = new ColorPick(video)
+           
+            showColors(img.nextElementSibling, await cp_img.getColors(5))
+            showColors(bg.nextElementSibling, await cp_bg.getColors(8))
+            showColors(video.nextElementSibling,  [await cp_video.getColor()])
+            
+        }
+        
+        function showColors(el,colors){
+            el.innerHTML=''
+            colors.map((c)=>{
+                var div=document.createElement('div')
+                div.className="colorZone"
+                div.style.background="rgb("+c+")";
+                el.append(div)
+            })
+
+        }
+
+    
+    </script>
+    
+</body>
+</html>
