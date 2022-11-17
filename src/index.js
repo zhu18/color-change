@@ -33,7 +33,7 @@ class ColorPick{
                 const background = el.style.background || el.style.backgroundImage || el.style.borderImageSource
                 if(background){
                     let img=document.createElement('IMG')
-                    //img.crossOrigin='anonymous';
+                    img.crossOrigin='Anonymous';
                     //跨域问题 
                     img.src=background.split("(")[1].split(")")[0].replaceAll('"','');
                     img.onload=()=>{
