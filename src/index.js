@@ -51,7 +51,7 @@ class ColorPick{
 const COLORCHANGE_TAG="__anov_colorChange_tag"
 
 class ColorChange{
-    constructor(el,isBright=false,isSaturate=false){
+    constructor(el,isBright=true,isSaturate=true){
         if(typeof el === 'string'){
             this.el=document.querySelectorAll(el)
         }else{
